@@ -8,8 +8,8 @@ Current device: **TB375FC** — Lenovo Xiaoxin Pad Pro 12.7 (2025).
 
 ## Client integration
 
-Once this repository is published with a `main` branch, point the device's
-Updater resource overlay at:
+Point the device's Updater resource overlay at these endpoints, served from the
+public `main` branch:
 
 | Resource | URL |
 | --- | --- |
