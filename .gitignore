@@ -1,0 +1,8 @@
+# Keep ROM binaries and private signing material out of this metadata repository.
+*.zip
+*.img
+*.bin
+*.pk8
+*.pem
+*.key
+secrets/

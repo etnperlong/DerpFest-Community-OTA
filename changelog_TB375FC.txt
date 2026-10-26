@@ -1,0 +1,13 @@
+DerpFest v17 - TB375FC - Community Stable
+2026-10-24
+
+- Initial Community build listed in this OTA repository.
+- Android 17 (SDK 37).
+- Android security patch level: 2026-10-01.
+- Full A/B OTA package for TB375FC (Lenovo Xiaoxin Pad Pro 12.7, 2025).
+
+Package: DerpFest-v17-20261024-TB375FC-Community-Stable.zip
+Build timestamp: 1792855675 (2026-10-24 15:27:55 UTC)
+
+This is a Community build maintained by etnperlong, not an official
+DerpFest release. This listing does not establish a tested OTA upgrade path.
