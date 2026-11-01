@@ -1,4 +1,121 @@
 DerpFest v17 - TB375FC - Community Stable
+2026-11-01
+
+== 中文 ==
+
+[系统底层]
+- 厂商底层更新：底包更新至 ZUXOS 1.5.10.123（MediaTek P34）
+- 安全补丁级别：2026-05-05 -> 2026-08-05
+- 驱动更新：WPA3 Wi-Fi，显示/MML、内存堆和音频模块更新
+- 内核更新：同步内核至 android14-6.1-2026-09_r5（6.1.176，build 16707926），安全补丁级别 2026-09-05
+
+[设备功能大型重构]
+- 所有页面参照原厂 ZUI 和新版设置界面重新设计，并分为 MediaTek MiraVision™、
+  杜比全景声®、性能与内存、配件设置、刷新率与触控 几组；各页面同时出现在
+  设置的 显示 / 声音 / 电池 / 已连接的设备 / 系统 中对应的位置。
+- 优化「屏幕色彩」菜单：通过设备自带的联发科画质服务实现原厂
+  ZUI 的屏幕色彩功能。
+- 新增「视频画质」调节：联发科显示硬件对硬件解码视频的增强处理，
+  可整体开关，并可单独控制 锐化、动态锐化、噪点自适应锐化、超分辨率、
+  动态对比度、色彩增强。
+- 带回「内存扩展」：优于原厂系统，ZRAM 采用 AOSP mmd 方案，可选择压缩算法，
+  支持多个容量，以及闲置时进行二次压缩，进一步降低虚拟内存占用
+- 修复「触控灵敏度」调整：现在可设置三档 防误触（低）/ 标准（中，默认）/ 
+  增强跟手（高），开机后自动应用。
+- 更多的快捷设置磁贴：新增 环境色自适应、视频画质增强、按应用调节性能 开关磁贴，
+  以及 杜比全景声、屏幕色彩、触控灵敏度 模式选择磁贴；长按任意磁贴可打开
+  对应设置页。
+- 适配更多联想官方及非官方配件：修复官方手写笔无法书写，添加官方配件连接/
+  断开通知。
+
+[兼容性修复]
+- 修复为旧版系统构建的纯 32 位应用问题
+- 移除错误出现的无效的振动选项
+- 恢复原厂密钥认证配置
+- 恢复原厂 Widevine 组件
+
+[流畅度]
+- libgui 启用联发科 GED KPI 帧时间戳上报，改善闲时 GPU 频率停在低档造成卡顿的问题
+- 启用 SurfaceFlinger 的 ADPF 功耗提示会话，FPSGO 可感知合成负载
+
+[Recovery]
+- 内置 OrangeFox Recovery R12.0（2026-10-31 构建），取代 LineageOS Recovery。
+  它打包在 vendor_boot 中，OTA 更新后仍会保留，无需另行刷入。
+
+[注意]
+- 本版本提高了 vendor（2026-08-05）和 boot（2026-09-05）的安全补丁级别，
+  KeyMint 会随之升级密钥。安装后无法降级，否则需要清除数据
+
+== English ==
+
+[Platform]
+- Vendor baseline update: updated to ZUXOS 1.5.10.123 (MediaTek P34)
+- Security patch level: 2026-05-05 -> 2026-08-05
+- Driver updates: updated WPA3 Wi-Fi, display/MML, memory heap, and audio
+  modules
+- Kernel update: synced kernel to android14-6.1-2026-09_r5 (6.1.176, build
+  16707926), security patch level 2026-09-05
+
+[Device Features Rework]
+- All pages redesigned after stock ZUI and the new Settings UI style,
+  categorized into MediaTek MiraVision™, Dolby Atmos®, Performance and memory,
+  Accessories, and Refresh rate and touch; each page also appears in its
+  corresponding place under Settings -> Display / Sound / Battery /
+  Connected devices / System
+- Optimized "Screen color" menu: implemented stock ZUI screen color features
+  via the device's built-in MediaTek picture quality service
+- Added "Video picture" adjustment: MediaTek display hardware enhancement
+  for hardware-decoded video, with a master switch and individual controls
+  for sharpening, dynamic sharpening, noise-adaptive sharpening, ultra
+  resolution, dynamic contrast, and color enhancement
+- Brought back "RAM expansion": improved over stock system with ZRAM powered
+  by AOSP mmd, supporting selectable compression algorithms, multiple capacity
+  options, and idle recompression to further reduce virtual memory footprint
+- Fixed "Touch sensitivity" adjustment: now configurable in three levels—
+  Palm rejection (Low) / Standard (Medium, default) / Responsive (High)—and
+  automatically reapplied at boot
+- More Quick Settings tiles: added toggle tiles for Ambient light adaptation,
+  Video picture enhancement, and Per-app performance tuning, as well as mode
+  selection tiles for Dolby Atmos, Screen color, and Touch sensitivity;
+  long-press any tile to open its settings page
+- Adapted more official and unofficial Lenovo accessories: fixed official
+  stylus drawing/writing failure, and added connect/disconnect notifications
+  for official accessories
+
+[Compatibility Fixes]
+- Fixed issues with 32-bit-only apps built for older Android versions
+- Removed erroneously displayed, non-functional vibration options
+- Restored stock key attestation configuration
+- Restored stock Widevine components
+
+[Smoothness]
+- libgui: enabled MediaTek GED KPI frame timestamp reporting to mitigate
+  stutter caused by GPU clocks idling at low frequencies
+- Enabled SurfaceFlinger ADPF power hint session, allowing FPSGO to perceive
+  composition load
+
+[Recovery]
+- Built-in OrangeFox Recovery R12.0 (built 2026-10-31), replacing LineageOS
+  Recovery. It is packaged into vendor_boot and preserved across OTA updates
+  without needing separate flashing
+
+[Notes]
+- This build raises vendor (2026-08-05) and boot (2026-09-05) security patch
+  levels; KeyMint will upgrade keys accordingly. Downgrades are not supported
+  after installation unless data is wiped
+
+Package: DerpFest-v17-20261101-TB375FC-Community-Stable.zip
+Build timestamp: 1793494584 (2026-11-01 00:56:24 UTC)
+Android 17 (SDK 37), Android security patch level: 2026-10-01.
+SHA-256: b6b0e11d6692dffb016efa378c2aa010a12f2754e2ae85c0917a89ead810d9d2
+
+This is a Community build maintained by etnperlong, not an official
+DerpFest release. The upgrade from 20261024 has not been tested as an OTA
+path.
+
+----------------------------------------------------------------------
+
+DerpFest v17 - TB375FC - Community Stable
 2026-10-24
 
 - Initial Community build listed in this OTA repository.
