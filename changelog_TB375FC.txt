@@ -1,4 +1,75 @@
 DerpFest v17 - TB375FC - Community Stable
+2026-11-02
+
+== 中文 ==
+
+[修复]
+- 修复 Wi-Fi 关闭后无法重新开启的问题
+  （感谢酷安用户 /u/1861882 反馈，定位与修复来自其提供的分析）
+- 修复官方手写笔书写无反应：面板在 144 Hz 下收不到 NVT 手写笔输入。
+  现在连接官方 Lenovo 手写笔（蓝牙）时自动将最高刷新率限制为 120 Hz。
+
+[新功能]
+- 充电控制改用原厂同款实现：健康 HAL 直接写入原厂充电驱动
+  （保护设置节点）的充电上限，行为与原厂「最大充电上限」一致，
+  上限 80% 时在 76% 恢复充电。可在 设置 -> 电池 -> 充电控制 使用，
+  并支持定时充电。
+- 旁路供电：在「性能与内存」中为指定应用开启后，应用在前台且已连接充电器时
+  电池停止充电、由适配器直接供电；电量降至 20% 时自动恢复并提醒。
+  已安装 GameSpace 时，也可对正在游玩的游戏自动启用。
+- 充电高温保护：充电时电量不低于 40% 且电池温度达到阈值
+  （39 / 41 / 43 ℃，默认 41 ℃）时暂停充电，温度下降后自动恢复，
+  以减缓高温充电对电池的损耗。
+
+[兼容性]
+- 同步上游最新的 MediaTek GED KPI 支持（frameworks/native），
+  不再使用本地 frameworks/native 分支。GPU 可通过帧时间戳跟随帧截止时间
+  调频，改善高负载下 GPU 频率停在 265-400 MHz 造成的丢帧。
+
+== English ==
+
+[Fixes]
+- Fixed Wi-Fi not turning back on after being turned off
+  (reported by CoolAPK user /u/1861882; the cause and the fix come from the
+  analysis they provided)
+- Fixed the official stylus drawing and writing nothing: the panel reports no
+  NVT pen input at 144 Hz. The maximum refresh rate is now capped at 120 Hz
+  automatically while an official Lenovo pen is connected over Bluetooth.
+
+[New Features]
+- Charging control now uses the stock implementation: the health HAL writes
+  the charging limit of the stock charger driver (the protection settings
+  node) directly, behaving like stock's "Maximum charge limit", resuming
+  charging at 76% for an 80% limit. Available in Settings -> Battery ->
+  Charging control, including scheduled charging.
+- Bypass charging: enabled per app under "Performance and memory", it stops
+  battery charging while the app is in front and the charger is connected, so
+  the adapter powers the tablet directly; charging resumes at 20% battery
+  with a warning. With GameSpace installed, it can also be enabled
+  automatically for the running game.
+- Charging heat protection: while charging at 40% battery or above, charging
+  pauses once the battery temperature reaches the threshold
+  (39 / 41 / 43 °C, 41 °C by default) and resumes once it cools, reducing
+  battery wear from high-temperature charging.
+
+[Compatibility]
+- Synced upstream's latest MediaTek GED KPI support (frameworks/native) and
+  dropped the local frameworks/native fork. GPU DVFS follows frame deadlines
+  from frame timestamps, improving dropped frames caused by GPU clocks
+  stalling at 265-400 MHz under full load.
+
+Package: DerpFest-v17-20261102-TB375FC-Community-Stable.zip
+Build timestamp: 1793647058 (2026-11-02 19:17:38 UTC)
+Android 17 (SDK 37), Android security patch level: 2026-10-01.
+SHA-256: d678414844d5b817a306ae40a4d02c3eda9950cd7dd97ac2b1f7f5ec9e04adbd
+
+This is a Community build maintained by etnperlong, not an official
+DerpFest release. The upgrade from 20261101 has not been tested as an OTA
+path.
+
+----------------------------------------------------------------------
+
+DerpFest v17 - TB375FC - Community Stable
 2026-11-01
 
 == 中文 ==
