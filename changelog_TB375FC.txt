@@ -1,4 +1,75 @@
 DerpFest v17 - TB375FC - Community Stable
+2026-11-06
+
+== 中文 ==
+
+[新功能]
+- 蓝牙 LE Audio：开启 LE Audio 单播客户端（同时启用 CSIP、VCP、MCP、CCP）
+  与广播助手，LE Audio 耳机可直接使用，也可加入 Auracast 广播；LC3 由系统
+  软件编码。双模耳机默认仍走 A2DP/HFP，需要时可在耳机详情页打开「LE Audio」。
+- 热点支持 2.4 GHz 与 5 GHz 同时开启（双频并发）
+- 声明 USB 有线网络：接入 USB 网卡即可使用有线网络，依赖该特性的应用也能
+  识别到有线连接。
+- 官方手写笔信息更完整：设置 -> 已连接的设备 中显示手写笔图片、电量与固件
+  版本，并可直接进入配件设置；快捷设置的蓝牙面板同样显示手写笔电量。
+
+[修复]
+- 修复充电控制的时间模式（自动、按下次闹钟、自定义计划）在连接充电器时
+  导致 system_server 崩溃的问题。健康 HAL 现在自行保存截止时间：截止前将
+  充电上限保持在 80%（76% 恢复充电），到期前 2 小时解除限制充满；剩余
+  不足 2 小时则直接充满。
+- 修复在鼠标键盘连接时，在含 At a Glance 钉住项的页面空白处按下鼠标左键
+  开始框选时的空指针崩溃。
+
+[系统底层]
+- 内核更新至 GKI android14-6.1-2026-09_r6（Google build 16799669，6.1.176）：
+  包含网络、USB 音频 / USB gadget 与 HID 修复。
+
+== English ==
+
+[New Features]
+- Bluetooth LE Audio: enabled the LE Audio unicast client (along with CSIP,
+  VCP, MCP, and CCP) and broadcast assistant. LE Audio headphones work
+  directly and can join Auracast broadcasts; LC3 encoding runs via
+  system software. Dual-mode headphones still default to A2DP/HFP; enable
+  LE Audio on the headphone details page when needed.
+- Hotspot supports simultaneous 2.4 GHz and 5 GHz operation (dual-band
+  concurrency).
+- Declared USB wired networking: connect a USB network adapter to use wired
+  networking; applications relying on this feature can also detect wired
+  connections.
+- More complete official stylus details: Settings -> Connected devices now
+  displays the stylus image, battery level, and firmware version, and gives
+  direct access to accessory settings; the Bluetooth panel in Quick
+  Settings also shows the stylus battery level.
+
+[Fixes]
+- Fixed a crash in system_server caused by time-based charging control modes
+  (Automatic, based on the next alarm, or Custom schedule) while the charger
+  is connected. The health HAL now manages the deadline directly: holds
+  charging at an 80% limit (resuming at 76%) until 2 hours before the
+  deadline, then lifts the limit to charge to full; if less than 2 hours
+  remain, it charges to full immediately.
+- Fixed a null pointer crash when, with a mouse and keyboard connected,
+  pressing the left mouse button on an empty area of a page holding a pinned
+  At a Glance item starts box selection.
+
+[Platform]
+- Kernel updated to GKI android14-6.1-2026-09_r6 (Google build 16799669,
+  6.1.176): includes network, USB audio / USB gadget, and HID fixes.
+
+Package: DerpFest-v17-20261106-TB375FC-Community-Stable.zip
+Build timestamp: 1794007805 (2026-11-06 23:30:05 UTC)
+Android 17 (SDK 37), Android security patch level: 2026-10-01.
+SHA-256: ceed1864eb36c9ae532c7af71b46d328a25e1371aa645c0cf58103be05da3e2d
+
+This is a Community build maintained by etnperlong, not an official
+DerpFest release. The upgrade from 20261102 has not been tested as an OTA
+path.
+
+----------------------------------------------------------------------
+
+DerpFest v17 - TB375FC - Community Stable
 2026-11-02
 
 == 中文 ==
