@@ -1,4 +1,47 @@
 DerpFest v17 - TB375FC - Community Stable
+2026-11-08
+
+== 中文 ==
+
+[修复]
+- 修复 YouTube 全屏等场景下因 RenderScript 初始化失败导致的应用崩溃：
+  移除会覆盖系统 VNDK APEX 实现的非原厂 RenderScript 库，改用系统实现。
+- 修复任务栏图标向桌面底栏对齐时位置偏低、动画结束后向上跳动的问题。
+  临时使用 Launcher3 修复分支，待上游合入后恢复上游版本；此前的鼠标框选
+  崩溃修复已由上游合入，本版本继续保留。
+
+[系统底层]
+- Android 安全补丁级别更新至 2026-11-01。
+
+== English ==
+
+[Fixes]
+- Fixed app crashes in scenarios such as YouTube full screen caused by
+  RenderScript initialization failure: removed the non-stock RenderScript
+  libraries that shadowed the system VNDK APEX implementation, allowing the
+  system implementation to load instead.
+- Fixed taskbar-to-hotseat icon alignment: icons no longer land too low and
+  snap upward at the end of the reveal animation. A temporary Launcher3 fix
+  branch is used until upstream merges the fix; the earlier mouse selection
+  crash fix has already been merged upstream and is retained in this release.
+
+[Platform]
+- Android security patch level updated to 2026-11-01.
+
+Package: DerpFest-v17-20261108-TB375FC-Community-Stable.zip
+Build timestamp: 1794160638 (2026-11-08 17:57:18 UTC)
+Android 17 (SDK 37), Android security patch level: 2026-11-01.
+SHA-256: ce95b7779bc60fa029f9b5392b1ac53898c25e6da2a0807d91f6af9dd34c8cbc
+Sources: device cc58c17, vendor 38be051, Launcher3 9aec1f9.
+Provenance: successful user build 20261108T173331Z, pinned manifest.xml.
+
+This is a Community build maintained by etnperlong, not an official
+DerpFest release. The upgrade from 20261106 has not been tested as an OTA
+path.
+
+----------------------------------------------------------------------
+
+DerpFest v17 - TB375FC - Community Stable
 2026-11-06
 
 == 中文 ==
